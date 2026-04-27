@@ -49,6 +49,11 @@ def PlantModelHelper(Plant):
 def PlantModel(Plant):
     asyncio.run(write_opc_string(f"{Plant}", "Plant_Name"))
     asyncio.run(write_opc_data(True, "New_Plant"))
+
+    # asyncio.run(write_opc_data(False, "Food"))
+    # asyncio.run(write_opc_data(True, "Light"))
+    # asyncio.run(write_opc_data(False, "Water"))
+
     return
 
 @app.route("/read")
