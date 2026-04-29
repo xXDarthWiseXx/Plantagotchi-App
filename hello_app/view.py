@@ -41,7 +41,7 @@ async def write_opc_string(data, node):
 
 def PlantModelHelper(Plant):
     if Plant != None:
-        PlantModel(Plant)
+        # PlantModel(Plant)
         return "Plant model chosen"
     else: 
         return "Please select a plant model."
@@ -110,7 +110,7 @@ def dropdown():
     plants = ['Fern', 'Succulent', 'Flower', 'Shrub']
     selected = request.form.get('plant')
     print(PlantModelHelper(selected))
-    plant_info = {'Flower':'Needs bright light.', 'Fern':'Keep moist.', 'Succulent':'Low water.', 'Shrub':"Doesn't need much!"}
+    plant_info = {'Flower':'Flowers need bright direct light, deep and infrequent watering, loose fertilized soil, and protection from extreme temperatures. They need at least 6 hours of direct light and to be watered deeply instead of light splashes.', 'Fern':'Ferns do best in bright indirect sunlight, high humidity, nutrient rich soil, and consistently moist soil. Fertilize them monthly and keep them out of cold areas.', 'Succulent':'Succulents need lots of bright direct light, minimal water, and fast draining soil. They should get at least 6 Hours of sunlight and watered when completely dry.', 'Shrub':"Shrubs require consistent watering, pruning, mulch, nutrient soil, and direct sunlight. Prune the dead wood off to keep healthy and refill nutrients and mulch whenever they get low."}
     return render_template('dropdown.html', plants=plants, selected_plant=selected, plant_info=plant_info)
 
 
